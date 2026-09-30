@@ -53,7 +53,7 @@ dependencyResolutionManagement {
 
 // build.gradle.kts
 dependencies {
-    implementation("com.github.noel77543:retrofitmocker:1.0.0")
+    implementation("com.github.noel77543:Library_Npattern_RetrofitMocker:1.0.0")
 }
 ```
 

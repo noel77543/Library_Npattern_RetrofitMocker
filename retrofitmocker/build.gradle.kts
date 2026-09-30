@@ -37,7 +37,7 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            //JitPack 會以 com.github.<USER> 與 git tag 覆寫 groupId / version
+            //僅用於本機 publishToMavenLocal；JitPack 發佈時會覆寫為 com.github.<USER>:<REPO>:<git tag>
             groupId = "com.github.noel77543"
             artifactId = "retrofitmocker"
             version = "1.0.0"
