@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    `maven-publish`
 }
 
 android {
@@ -14,11 +15,37 @@ android {
         minSdk = 21
 
         consumerProguardFiles("consumer-rules.pro")
+
+        //未使用任何 Android API，避免 AAR metadata 預設以 compileSdk 要求使用者的 compileSdk
+        aarMetadata {
+            minCompileSdk = 21
+        }
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            //JitPack 會以 com.github.<USER> 與 git tag 覆寫 groupId / version
+            groupId = "com.github.noel77543"
+            artifactId = "retrofitmocker"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
     }
 }
 

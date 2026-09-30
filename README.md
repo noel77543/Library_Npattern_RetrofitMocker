@@ -34,12 +34,12 @@ class UserApiMocker {
 
 ## 需求
 
-- minSdk 21+
+- minSdk 21+（對 compileSdk 無額外要求）
 - Retrofit 2.11.0（以 `api` 依賴傳遞）
 
 ## 安裝
 
-> 發佈設定完成後補上實際座標。
+[![](https://jitpack.io/v/noel77543/Library_Npattern_RetrofitMocker.svg)](https://jitpack.io/#noel77543/Library_Npattern_RetrofitMocker)
 
 ```kotlin
 // settings.gradle.kts
@@ -53,7 +53,7 @@ dependencyResolutionManagement {
 
 // build.gradle.kts
 dependencies {
-    implementation("com.github.<USER>:<REPO>:<VERSION>")
+    implementation("com.github.noel77543:retrofitmocker:1.0.0")
 }
 ```
 
@@ -209,3 +209,21 @@ if (BuildConfig.DEBUG) {
 - tag 找不到、tag 重複、factory 順序錯誤時的錯誤訊息
 
 執行 app 後結果會顯示在畫面上，並輸出至 Logcat（tag：`RetrofitMockerSample`）。
+
+## 授權
+
+```
+Copyright 2026 noel77543
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

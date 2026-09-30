@@ -1,0 +1,5 @@
+jdk:
+  - openjdk21
+install:
+  # 只建置並發佈 lib module，不建置範例 app
+  - ./gradlew :retrofitmocker:publishToMavenLocal
